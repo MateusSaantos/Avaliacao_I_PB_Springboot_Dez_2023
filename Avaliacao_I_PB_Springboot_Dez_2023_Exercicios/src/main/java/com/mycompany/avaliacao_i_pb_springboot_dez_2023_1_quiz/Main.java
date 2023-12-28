@@ -12,6 +12,8 @@ public class Main {
     public static void main(String[] args) {
         Controler controle = new Controler();
         
+        controle.cadastrar_Usuario();
         controle.alternativa_Usuario();
+        controle.acertos_erros();
     }
 }
