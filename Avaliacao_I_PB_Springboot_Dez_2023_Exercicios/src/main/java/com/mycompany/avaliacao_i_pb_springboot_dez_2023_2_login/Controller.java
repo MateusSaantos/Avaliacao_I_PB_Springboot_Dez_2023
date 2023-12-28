@@ -12,6 +12,7 @@ import java.util.Scanner;
  */
 public class Controller {
     Usuarios usuario = new Usuarios();
+    Mensagens mensagem = new Mensagens();
     Scanner ler = new Scanner(System.in);
     
     String usuario_correto = "mateus@uol.com.br";
@@ -19,6 +20,7 @@ public class Controller {
     String senha_incorreta = "incorreta";
     
     public void realizar_Login(){
+        usuario.cadastrar_Usuarios();
         int opcoes;
         boolean validador = false;
         
@@ -38,11 +40,7 @@ public class Controller {
             validador = usuario.validar_Login(usuario_correto, senha_incorreta);
         }
         
-        if(validador == false){
-            
-        } else{
-            
-        }
-        
+        String retorno = mensagem.retornar_Mensagem(validador);
+        System.out.println(retorno);
     }
 }

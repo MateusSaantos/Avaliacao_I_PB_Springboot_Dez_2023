@@ -9,8 +9,10 @@ package com.mycompany.avaliacao_i_pb_springboot_dez_2023_2_login;
  * @author Mateus Santos
  */
 public class Main {
-
+    
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Controller controlle = new Controller();
+        
+        controlle.realizar_Login();
     }
 }

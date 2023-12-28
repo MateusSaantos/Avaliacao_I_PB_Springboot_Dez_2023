@@ -39,7 +39,9 @@ public class Mensagens {
         listaDeMensagens.add(new Mensagens("Usuário e/ou senha incorretos"));
     }
     
-    public String retornar_Mensagem(){
+    public String retornar_Mensagem(boolean validador){
+        cadastrar_Mensagem();
+        
         String mensagem = "";
         
         LocalDateTime data_Hora_Atual = LocalDateTime.now();
@@ -52,7 +54,8 @@ public class Mensagens {
         LocalTime madrugada_Inicio = LocalTime.MIDNIGHT;
         LocalTime madrugada_Fim = LocalTime.of(5, 59);
         
-        if (hora_Atual.isAfter(manha_Inicio) && hora_Atual.isBefore(manha_Fim)) {
+        if(validador == true){
+            if (hora_Atual.isAfter(manha_Inicio) && hora_Atual.isBefore(manha_Fim)) {
             Mensagens mensagem_selecionada = listaDeMensagens.get(0);
             mensagem = mensagem_selecionada.getMensagem();
             
@@ -62,9 +65,17 @@ public class Mensagens {
             mensagem = mensagem_selecionada.getMensagem();
             
         } else if (hora_Atual.isAfter(madrugada_Inicio) && hora_Atual.isBefore(madrugada_Fim)) {
+            System.out.println("MES");
             Mensagens mensagem_selecionada = listaDeMensagens.get(2);
             mensagem = mensagem_selecionada.getMensagem();
+        
         }
+        } else {
+            Mensagens mensagem_selecionada = listaDeMensagens.get(3);
+            mensagem = mensagem_selecionada.getMensagem();
+        
+        }
+        
         return mensagem;
     } 
 }
