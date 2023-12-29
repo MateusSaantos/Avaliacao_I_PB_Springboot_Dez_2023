@@ -11,15 +11,15 @@ import java.util.ArrayList;
  * @author Mateus Santos
  */
 public class Usuarios {
-
     public static ArrayList<Usuarios> listaDeUsuarios = new ArrayList<>();
+    
+    private String usuario;
+    private String senha;
     
     public Usuarios(String usuario, String senha) {
         this.usuario = usuario;
         this.senha = senha;
     }
-    private String usuario;
-    private String senha;
 
     public Usuarios() {
     }
